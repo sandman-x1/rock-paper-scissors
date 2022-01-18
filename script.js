@@ -70,7 +70,13 @@ function game() {
         let choice = prompt("Please choose between Rock, Paper or Scissors");
         playRound(choice, computerPlay());
     }
-    
+    if (playerWins === computerWins) {
+        console.log(`You Tied the Match on ${playerWins} wins each!`);
+    } else if (playerWins > computerWins) {
+        console.log(`You Won the Match ${playerWins} wins to ${computerWins} !`)
+    } else {
+        console.log(`You Lost the Match ${computerWins} to ${playerWins} !`)
+    }
 }
 
 game();
