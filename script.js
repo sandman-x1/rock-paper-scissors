@@ -10,28 +10,41 @@ function computerPlay() {
 }
 
 function playRound(player, computer) {
+    playerWins = 0;
+    computerWins = 0;
     player = player.toLowerCase();
     if (player === computer) {
         return "It's a Tie!"
     } 
     else if (player === "rock") {
         if (computer === "paper") {
+            computerWins++
             return "You Lose! Paper beats Rock!"
         }
-        else return "You Win! Rock beats Scissors!"
+        else {
+            playerWins++
+            return "You Win! Rock beats Scissors!"
+        }
     }
     else if (player === "paper") {
         if (computer === "rock") {
+            playerWins++
             return "You win! Paper beats Rock!"
         }
-        else return "You Lose! Scissors beat Paper!"
+        else {
+            computerWins++
+            return "You Lose! Scissors beat Paper!"
+        }
     }
     else {
         if (computer === "rock") {
+            computerWins++
             return "You Lose! Rock beat Scissors"
         }
-        else return "You Win! Scissors beat Paper!"
+        else {
+            playerWins++
+            return "You Win! Scissors beat Paper!"
+        }
     }
 }
 
-console.log(playRound("rock", computerPlay()));
