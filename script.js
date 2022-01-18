@@ -1,11 +1,11 @@
 function computerPlay() {
     let num = Math.floor(Math.random() * 3);
     if (num === 0) {
-        return "Rock"
+        return "rock"
     } else if (num === 1) {
-        return "Paper"
+        return "paper"
     } else {
-        return "Scissors"
+        return "scissors"
     }
 }
 
@@ -34,4 +34,4 @@ function playRound(player, computer) {
     }
 }
 
-console.log(playRound("scissors" ,"paper"));
+console.log(playRound("rock", computerPlay()));
