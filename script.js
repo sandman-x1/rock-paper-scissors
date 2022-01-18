@@ -10,10 +10,10 @@ function computerPlay() {
 }
 
 function playRound(player, computer) {
-    playerWins = 0;
-    computerWins = 0;
+    
     player = player.toLowerCase();
     if (player === computer) {
+        tieCounter++
         return "It's a Tie!"
     } 
     else if (player === "rock") {
@@ -48,3 +48,12 @@ function playRound(player, computer) {
     }
 }
 
+function game() {
+    tieCounter = 0;
+    playerWins = 0;
+    computerWins = 0;
+    for (i = 0; i < 5; i++) {
+        let choice = prompt("Please choose between Rock, Paper or Scissors");
+        playRound(choice, computerPlay());
+    }
+}
