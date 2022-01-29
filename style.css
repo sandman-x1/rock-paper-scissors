@@ -38,6 +38,15 @@ body {
     white-space: pre;
 }
 
+.score {
+    display: flex;
+    justify-content: center;
+    margin-top: 72px;
+    color: #f5f5f5;
+    font-size: 32px;
+    gap: 180px;
+}
+
 .button:hover {
     border-color: #ffed24;
 }

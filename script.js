@@ -9,6 +9,9 @@ function computerPlay() {
     }
 }
 
+let playerWins = 0;
+let computerWins =0;
+
 const results = document.querySelector('.results');
 
 function playRound(player, computer) {
@@ -20,25 +23,37 @@ function playRound(player, computer) {
     else if (player === "rock") {
         if (computer === "paper") {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Paper beats Rock!`;
+            computerWins++
+            cpuScore.textContent = `Computer: ${playerWins}`
         }
         else {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Win! Rock beats Scissors!`;
+            playerWins++
+            playerScore.textContent = `You: ${playerWins}`
         }
     }
     else if (player === "paper") {
         if (computer === "rock") {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou win! Paper beats Rock!`;
+            playerWins++
+            playerScore.textContent = `You: ${playerWins}`
         }
         else {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Scissors beat Paper!`;
+            computerWins++
+            cpuScore.textContent = `Computer: ${playerWins}`
         }
     }
     else {
         if (computer === "rock") {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Rock beat Scissors`;
+            computerWins++
+            cpuScore.textContent = `Computer: ${playerWins}`
         }
         else {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Win! Scissors beat Paper!`;
+            playerWins++
+            playerScore.textContent = `You: ${playerWins}`
         }
     }
 }
@@ -73,4 +88,7 @@ button2.addEventListener('click', function () {
 button3.addEventListener('click', function () {
     playRound('scissors', computerPlay())
 })
+
+const playerScore = document.querySelector('.playerScore');
+const cpuScore = document.querySelector('.cpuScore');
 
