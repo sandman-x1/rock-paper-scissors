@@ -9,34 +9,36 @@ function computerPlay() {
     }
 }
 
+const results = document.querySelector('.results');
+
 function playRound(player, computer) {
     
     player = player.toLowerCase();
     if (player === computer) {
-        console.log(`You chose ${player}\nThe computer chose ${computer}\nIt's a Tie!`);
+        results.textContent = `You chose ${player}\nThe computer chose ${computer}\nIt's a Tie!`;
     } 
     else if (player === "rock") {
         if (computer === "paper") {
-            console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Lose! Paper beats Rock!`);
+            results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Paper beats Rock!`;
         }
         else {
-            console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Win! Rock beats Scissors!`);
+            results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Win! Rock beats Scissors!`;
         }
     }
     else if (player === "paper") {
         if (computer === "rock") {
-            console.log(`You chose ${player}\nThe computer chose ${computer}\nYou win! Paper beats Rock!`);
+            results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou win! Paper beats Rock!`;
         }
         else {
-            console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Lose! Scissors beat Paper!`);
+            results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Scissors beat Paper!`;
         }
     }
     else {
         if (computer === "rock") {
-            console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Lose! Rock beat Scissors`);
+            results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Rock beat Scissors`;
         }
         else {
-            console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Win! Scissors beat Paper!`);
+            results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Win! Scissors beat Paper!`;
         }
     }
 }
@@ -71,3 +73,4 @@ button2.addEventListener('click', function () {
 button3.addEventListener('click', function () {
     playRound('scissors', computerPlay())
 })
+
