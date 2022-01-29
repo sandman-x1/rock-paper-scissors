@@ -13,6 +13,8 @@ let playerWins = 0;
 let computerWins =0;
 
 const results = document.querySelector('.results');
+const playerScore = document.querySelector('.playerScore');
+const cpuScore = document.querySelector('.cpuScore');
 
 function playRound(player, computer) {
     
@@ -59,23 +61,6 @@ function playRound(player, computer) {
     checkResults(playerWins, computerWins);
 }
 
-/* function game() {
-    tieCounter = 0;
-    playerWins = 0;
-    computerWins = 0;
-    for (i = 0; i < 5; i++) {
-        let choice = prompt("Please choose between Rock, Paper or Scissors");
-        playRound(choice, computerPlay());
-    }
-    if (playerWins === computerWins) {
-        console.log(`You Tied the Match on ${playerWins} wins each!`);
-    } else if (playerWins > computerWins) {
-        console.log(`You Won the Match ${playerWins} wins to ${computerWins} !`)
-    } else {
-        console.log(`You Lost the Match ${computerWins} to ${playerWins} !`)
-    }
-} */
-
 const button1 = document.querySelector('.button1');
 const button2 = document.querySelector('.button2');
 const button3 = document.querySelector('.button3');
@@ -90,16 +75,14 @@ button3.addEventListener('click', function () {
     playRound('scissors', computerPlay())
 })
 
-const playerScore = document.querySelector('.playerScore');
-const cpuScore = document.querySelector('.cpuScore');
-const score = document.querySelector('.score');
+const final = document.querySelector('#buttonContainer');
 
 function checkResults(playerW, cpuW) {
     if (playerW < 5 && cpuW < 5) {
         return
     } else if (playerW === 5) {
-        score.textContent = 'You Win'
+        final.textContent = 'You Win';
     } else if (cpuW === 5) {
-        score.textContent = 'The Computer Wins'
+        final.textContent = 'The Computer Wins';
     }
 }
