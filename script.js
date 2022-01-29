@@ -48,7 +48,7 @@ function playRound(player, computer) {
     }
 }
 
-function game() {
+/* function game() {
     tieCounter = 0;
     playerWins = 0;
     computerWins = 0;
@@ -63,6 +63,5 @@ function game() {
     } else {
         console.log(`You Lost the Match ${computerWins} to ${playerWins} !`)
     }
-}
+} */
 
-game();

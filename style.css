@@ -1,0 +1,12 @@
+body {
+    background-color: #0f1230;
+    font-family: verdana, sans-serif;
+}
+
+#header {
+    color: white;
+    width: 400px;
+    margin: auto;
+    font-size: 36px;
+    margin-top: 36px;
+}
