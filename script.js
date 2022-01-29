@@ -24,7 +24,7 @@ function playRound(player, computer) {
         if (computer === "paper") {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Paper beats Rock!`;
             computerWins++
-            cpuScore.textContent = `Computer: ${playerWins}`
+            cpuScore.textContent = `Computer: ${computerWins}`
         }
         else {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Win! Rock beats Scissors!`;
@@ -41,14 +41,14 @@ function playRound(player, computer) {
         else {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Scissors beat Paper!`;
             computerWins++
-            cpuScore.textContent = `Computer: ${playerWins}`
+            cpuScore.textContent = `Computer: ${computerWins}`
         }
     }
     else {
         if (computer === "rock") {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Lose! Rock beat Scissors`;
             computerWins++
-            cpuScore.textContent = `Computer: ${playerWins}`
+            cpuScore.textContent = `Computer: ${computerWins}`
         }
         else {
             results.textContent = `You chose ${player}\nThe computer chose ${computer}\nYou Win! Scissors beat Paper!`;
@@ -56,6 +56,7 @@ function playRound(player, computer) {
             playerScore.textContent = `You: ${playerWins}`
         }
     }
+    checkResults(playerWins, computerWins);
 }
 
 /* function game() {
@@ -91,4 +92,14 @@ button3.addEventListener('click', function () {
 
 const playerScore = document.querySelector('.playerScore');
 const cpuScore = document.querySelector('.cpuScore');
+const score = document.querySelector('.score');
 
+function checkResults(playerW, cpuW) {
+    if (playerW < 5 && cpuW < 5) {
+        return
+    } else if (playerW === 5) {
+        score.textContent = 'You Win'
+    } else if (cpuW === 5) {
+        score.textContent = 'The Computer Wins'
+    }
+}
