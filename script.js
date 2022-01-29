@@ -13,36 +13,29 @@ function playRound(player, computer) {
     
     player = player.toLowerCase();
     if (player === computer) {
-        tieCounter++
         console.log(`You chose ${player}\nThe computer chose ${computer}\nIt's a Tie!`);
     } 
     else if (player === "rock") {
         if (computer === "paper") {
-            computerWins++
             console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Lose! Paper beats Rock!`);
         }
         else {
-            playerWins++
             console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Win! Rock beats Scissors!`);
         }
     }
     else if (player === "paper") {
         if (computer === "rock") {
-            playerWins++
             console.log(`You chose ${player}\nThe computer chose ${computer}\nYou win! Paper beats Rock!`);
         }
         else {
-            computerWins++
             console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Lose! Scissors beat Paper!`);
         }
     }
     else {
         if (computer === "rock") {
-            computerWins++
             console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Lose! Rock beat Scissors`);
         }
         else {
-            playerWins++
             console.log(`You chose ${player}\nThe computer chose ${computer}\nYou Win! Scissors beat Paper!`);
         }
     }
@@ -65,3 +58,16 @@ function playRound(player, computer) {
     }
 } */
 
+const button1 = document.querySelector('.button1');
+const button2 = document.querySelector('.button2');
+const button3 = document.querySelector('.button3');
+
+button1.addEventListener('click', function () {
+    playRound('rock', computerPlay())
+})
+button2.addEventListener('click', function () {
+    playRound('paper', computerPlay())
+})
+button3.addEventListener('click', function () {
+    playRound('scissors', computerPlay())
+})
