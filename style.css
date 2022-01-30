@@ -47,6 +47,11 @@ body {
     gap: 180px;
 }
 
+.finalResult {
+    color: #f5f5f5;
+    font-size: 48px;
+}
+
 .button:hover {
     border-color: #ffed24;
 }

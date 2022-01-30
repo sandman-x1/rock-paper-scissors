@@ -81,13 +81,22 @@ button3.addEventListener('click', function () {
 
 const final = document.querySelector('#buttonContainer');
 
+function resultClass() {
+    final.classList.add('finalResult');
+}
+
 /* Function checking overall game results */
 function checkResults(playerW, cpuW) {
     if (playerW < 5 && cpuW < 5) {
         return
     } else if (playerW === 5) {
-        final.textContent = 'You Win';
+        final.textContent = 'You Win!';
+        resultClass();
     } else if (cpuW === 5) {
-        final.textContent = 'The Computer Wins';
+        final.textContent = 'The Computer Wins!';
+        resultClass();
     }
 }
+
+
+/* Add to container classList and reset button */
